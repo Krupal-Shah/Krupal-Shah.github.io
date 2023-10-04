@@ -7,16 +7,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Krupal Shah</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
 </head>
 <body>
     <header class="header">
-      </div> 
       <div class="mainmenu">
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+        <div class="header__img">
+          <img src="img/profilepic.PNG" alt="profile Picture of Krupal Shah">
+        </div>
         <div class="header__text_name">
             <h1 class="heading__primary heading__primary_main"><span>&#60;Hello World!&#62;</span></h1>
             <h1 class="heading__primary heading__primary_sub"><span>My Name is Krupal Shah.</span></h1> 
@@ -29,10 +35,11 @@
         <h2>About Me</h2>
         <div class="text_container">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, corrupti. Modi, saepe at cumque corporis incidunt esse aut ducimus unde repudiandae fuga sapiente! Blanditiis veniam voluptatem rerum beatae ratione maiores!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla mollitia fuga iste sed nemo earum, aperiam laudantium inventore enim a! Laborum quia officia ad veniam sed cumque quo voluptatum totam.
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio ullam, nostrum exercitationem numquam ab consequuntur excepturi expedita minima iste rem amet laudantium quaerat facilis assumenda sit praesentium aliquam ad soluta?
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis numquam veniam deserunt magnam corrupti. Harum optio aspernatur culpa, magni labore delectus velit voluptatem qui porro laudantium? Praesentium culpa voluptates maiores.
+              I am a second year BSc student at the University of Alberta. My journey in technology began with the development of MovieMania, a Python and MySQL-based cinema booking app. This project ignited my passion for coding and honed my problem-solving skills, emphasizing my ability to design user-friendly interfaces and manage complex backend systems efficiently.
+              My collaborative spirit shone during the University of Alberta Programming Contest, where my team secured a top-10 ranking, with recognition as the fastest coder. These experiences enhanced my teamwork, communication, and problem-solving abilities.
+              <br> I possess a deep curiosity for emerging technologies and remain committed to continuous learning. My journey encompasses various programming languages, web development, database management, and machine learning. This evolving adventure fuels my enthusiasm for innovation.
+              
+              As I embark on the next chapter, I am eager to apply my technical expertise and innovative drive to make a positive impact within a dynamic team, contributing to the ever-evolving tech landscape.
             </p>
         </div>
     </section>
@@ -57,12 +64,14 @@
         <input type="radio" name="slider" id="item-3">
         <input type="radio" name="slider" id="item-4">
         <input type="radio" name="slider" id="item-5">
+        <input type="radio" name="slider" id="item-6">
+        <input type="radio" name="slider" id="item-7">
         <div class="cards">
           <label class="card" for="item-1" id="song-1">
             <div class="project project--1">
               <h3 class="project__title">1. Scheduler</h3>
               <p class="project__description">This responsive web application can be used to build an automatic schedule based on tasks inputted by the user. In the backend, it uses a priority based algorithm to categorize the tasks. This project was part of a Hackthon and my team and I won second position for it.
-              <a href="#" class="btn btn--white">View Project</a>
+              <a href="https://github.com/Krupal-Shah/Scheduler" class="btn btn--white">View Project</a>
               </p>
             </div>
           </label>
@@ -70,7 +79,7 @@
             <div class="project project--2">
               <h3 class="project__title">2. The Dice Game</h3>
               <p class="project__description">This is an interactive multiplayer web game where users can compete in getting the highest score of the 3 rounds. Created the game using JavaScript, writing well-engineered, reliable, scalable, and maintainable codes to create a fully responsive application.
-              <a href="#" class="btn btn--white">View Project</a>
+              <a href="https://github.com/Krupal-Shah/TheDiceGame-Multiplayer" class="btn btn--white">View Project</a>
               </p>
             </div>
           </label>
@@ -78,7 +87,7 @@
             <div class="project project--3">
               <h3 class="project__title">3. Nature Website</h3>
               <p class="project__description">This is a sample template website build mainly using SCSS to learn and explore the various uses and power of CSS. This is a responsive website that can be used as a template for other websites. The main topic chosen for this template was natures and exploring nature.
-              <a href="#" class="btn btn--white">View Project</a>
+              <a href="https://github.com/Krupal-Shah/Project-Nature-Website" class="btn btn--white">View Project</a>
               </p>
             </div>
           </label>
@@ -86,15 +95,31 @@
             <div class="project project--4">
               <h3 class="project__title">4. Vision AI</h3>
               <p class="project__description">This is a Vision Computing Project based in Python that uses a camera to scan the environment and will show where the surrounding is, what it is, and the accuracy of the detection. It also has TTS to give audio feedback of the same. This project uses a pre-trained neural network called YOLO.<br>
-              <a href="#" class="btn btn--white">View Project</a>
+              <a href="https://github.com/Krupal-Shah/Vision-AI" class="btn btn--white">View Project</a>
               </p>
             </div>
           </label>
           <label class="card" for="item-5" id="song-5">
             <div class="project project--5">
-              <h3 class="project__title">5. Movie Booking</h3>
-              <p class="project__description">This is a Python Project for movie lovers. It uses the tkinter gui interface by python and MySQL as the database client in the backend.
-              <a href="#" class="btn btn--white">View Project</a>
+              <h3 class="project__title">5. MovieMania - Movie Booking App</h3>
+              <p class="project__description">This is a Python Project for movie lovers. It uses the tkinter gui interface by python and MySQL as the database client in the backend. This was my first python project / app that I ever create and it turned out to be amazing.<br>
+              <a href="https://github.com/Krupal-Shah/MovieMania--The-best-movie-booking-app" class="btn btn--white">View Project</a>
+              </p>
+            </div>
+          </label>
+          <label class="card" for="item-6" id="song-6">
+            <div class="project project--6">
+              <h3 class="project__title">6. Unimates</h3>
+              <p class="project__description">This is an HTML project that is centered around international students. This project was part of Hacked Beta 2022, a Beta version of a hackathon hosted in Alberta.<br>
+              <a href="https://github.com/Krupal-Shah/MovieMania--The-best-movie-booking-app" class="btn btn--white">View Project</a>
+              </p>
+            </div>
+          </label>
+          <label class="card" for="item-7" id="song-7">
+            <div class="project project--7">
+              <h3 class="project__title">7. Year of Zayed</h3>
+              <p class="project__description">This is a Python Project for movie lovers. It uses the tkinter gui interface by python and MySQL as the database client in the backend. This was my first python project / app that I ever create and it turned out to be amazing.<br>
+              <a href="https://github.com/Krupal-Shah/MovieMania--The-best-movie-booking-app" class="btn btn--white">View Project</a>
               </p>
             </div>
           </label>
