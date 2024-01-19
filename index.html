@@ -1,342 +1,543 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Krupal Shah</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <div class="navigation hide" id="navi-btn">
-    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-    <label for="navi-toggle" class="navigation__button">
-        <span class="navigation__icon">&nbsp;</span>
-    </label>
-
-    <div class="navigation__background">&nbsp;</div>
-
-    <nav class="navigation__nav">
-        <ul class="navigation__list">
-            <li class="navigation__item"><a href="#about" class="navigation__link navigation__link-2"><span>01</span>About Me</a></li>
-            <li class="navigation__item"><a href="#skills" class="navigation__link navigation__link-2"><span>02</span>Skills</a></li>
-            <li class="navigation__item"><a href="#projects" class="navigation__link navigation__link-2"><span>03</span>My Projects</a></li>
-            <li class="navigation__item"><a href="#contact" class="navigation__link navigation__link-2"><span>04</span>Contact Me</a></li>
-            <li class="navigation__item"><a href="resume.pdf" target="_blank" class="navigation__link navigation__link-2"><span>05</span>Download Resume</a></li>
-            </ul>
-    </nav>
-  </div>
-
-  <header class="header" id="head">
-    <div class="mainmenu">
-      <a href="#about" class="navigation__link navigation__link-1">About</a>
-      <a href="#skills" class="navigation__link navigation__link-1">Skills</a>
-      <a href="#projects" class="navigation__link navigation__link-1">Projects</a>
-      <a href="#contact" class="navigation__link navigation__link-1">Contact</a>
-      <a href="resume.pdf" target="_blank" class="navigation__link navigation__link-1">Download Resume</a>
-    </div>
-
-    <div class="header__img">
-      <img src="img/profilepic.PNG" alt="profile Picture of Krupal Shah">
-    </div>
-      <div class="header__text_name">
-          <h1 class="heading__primary heading__primary_main"><span>&#60;Hello World!&#62;</span></h1>
-          <h1 class="heading__primary heading__primary_sub"><span>My Name is Krupal Shah.</span></h1> 
-      </div>
-      <h3 class="heading__secondary"><span>Scroll Down</span><br>
-      <span>&#8595</span></h3>
-  </header>
-
-  <section class="reveal container" id="about">
-    <div class="title-header">
-      <div class="title">
-        <h2>About</h2>
-        <div>
-          <h2>About Me</h2>
-        </div>
-      </div>
-    <div class="about">
-      <div class="about__image">
-        <img src="img/profilepic2.png" alt="Krupal's Picture" class="about_img">
-      </div>
-      <div class="about__text">
-        <p>
-          I am a second year student studying computer science at the University of Alberta. My journey began 
-          with the development of MovieMania, a Python and MySQL-based movie booking app. This project ignited 
-          my passion for coding, and I continued to learn various programming languages, web development tools, database
-          management and so much more. <br><br>
-          My collaborative spirit shone during my second hackathon by the Dev Edmonton Society, where my team secured 
-          second position among the 15 teams that participated. These experiences enhanced my teamwork, communication,
-            and problem-solving abilities. As I embark on the next chapter, I am eager to apply my technical expertise and innovative drive to make a positive impact within a dynamic team, contributing to the ever-evolving tech landscape.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="reveal" id="skills">
-    <div class="skills">
-      <div class="title">
-        <h2>Skills</h2>
-        <div>
-          <h2>My Skills</h2>
-        </div>
-      </div>
-      <h3>Technical Skills</h3>
-        <div class="skills__row">
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>HTML5 / CSS3 / SASS</span>
-              <span class="w-84">84%</span>
-            </div>
-            <div class="progress progress-moved">
-              <div class="progress-bar w-84"></div>
-            </div>
-          </div>
-
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>Python 3</span>
-              <span class="w-90">90%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar w-90"></div>
-            </div>
-          </div>
-
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>C / C++</span>
-              <span class="w-70">70%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar w-70"></div>
-            </div>
-          </div>
-
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>JavaScript</span>
-              <span class="w-40">40%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar w-40"></div>
-            </div>
-          </div>
-
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>Flask</span>
-              <span class="w-50">50%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar w-50"></div>
-            </div>
-          </div>
-
-          <div class="skills__item">
-            <div class="skills__item-text">
-              <span>GIT</span>
-              <span class="w-70">70%</span>
-            </div>
-            <div class="progress">
-              <div class="progress-bar w-70"></div>
-            </div>
-          </div>
-        </div>  
-
-      <h3>Other Skills</h3>
-        <div class="skills__row">
-        <div class="skills__item">
-          <div class="skills__item-text">
-            <span>Communication</span>
-            <span class="w-76">76%</span>
-          </div>
-          <div class="progress">
-            <div class="progress-bar w-76"></div>
-          </div>
-        </div>
-
-      
-      <div class="skills__item">
-        <div class="skills__item-text">
-          <span>Problem Solving</span>
-          <span class="w-84">84%</span>
-        </div>
-        <div class="progress">
-          <div class="progress-bar w-84"></div>
-        </div>
-      </div>
-
-      <div class="skills__item">
-        <div class="skills__item-text">
-          <span>Teamwork</span>
-          <span class="w-90">90%</span>
-        </div>
-        <div class="progress">
-          <div class="progress-bar w-90"></div>
-        </div>
-      </div>
-
-      <div class="skills__item">
-        <div class="skills__item-text">
-          <span>Project Management</span>
-          <span class="w-81">81%</span>
-        </div>
-        <div class="progress">
-          <div class="progress-bar w-81"></div>
-        </div>
-      </div>
-    </div>  
-
-    </div>
-  </section>
+    <section id="logo">
+        <div class="logo">
+            <div class="logo-container">
+                <h1 class="logo-intro">
+                    <span class="logo-intro-text">Krupal Shah</span>
+                </h1>
     
-  <section class="reveal" id="projects">
-    <div class="title">
-      <h2>Projects</h2>
-      <div class="text-up">
-        <h2>My Projects</h2>
-      </div>
-    </div>
-    <div class="container">
-      <div class="project_container">
-        <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2">
-        <input type="radio" name="slider" id="item-3">
-        <input type="radio" name="slider" id="item-4">
-        <input type="radio" name="slider" id="item-5">
-        <input type="radio" name="slider" id="item-6">
-        <input type="radio" name="slider" id="item-7">
-        <div class="cards">
-          <label class="card" for="item-1" id="song-1">
-            <div class="project project--1">
-              <h3 class="project__title">Scheduler</h3>
-              <p class="project__description">This responsive web application can be used to build an automatic schedule based on tasks inputted by the user. In the backend, it uses a priority based algorithm to categorize the tasks. This project was part of a Hackthon and my team and I won second position for it.
-              </p>
-              <a href="https://github.com/Krupal-Shah/Scheduler" class="btn btn--white">View Project</a>
+                <h1 class="logo-intro">
+                    <span class="logo-intro-text-2 left25">K</span>
+                    <span class="logo-intro-text-2 right25">S</span>
+                </h1>
             </div>
-          </label>
-          <label class="card" for="item-2" id="song-2">
-            <div class="project project--2">
-              <h3 class="project__title">The Dice Game</h3>
-              <p class="project__description">This is an interactive multiplayer web game where users can compete in getting the highest score of the 3 rounds. Created the game using JavaScript, writing well-engineered, reliable, scalable, and maintainable codes to create a fully responsive application.
-              </p>
-              <a href="https://github.com/Krupal-Shah/TheDiceGame-Multiplayer" class="btn btn--white">View Project</a>
-            </div>
-          </label>
-          <label class="card" for="item-3" id="song-3">
-            <div class="project project--3">
-              <h3 class="project__title">Nature Website</h3>
-              <p class="project__description">This is a sample template website build mainly using SCSS to learn and explore the various uses and power of CSS. This is a responsive website that can be used as a template for other websites. The main topic chosen for this template was natures and exploring nature.
-              </p>
-              <a href="https://github.com/Krupal-Shah/Project-Nature-Website" class="btn btn--white">View Project</a>
-            </div>
-          </label>
-          <label class="card" for="item-4" id="song-4">
-            <div class="project project--4">
-              <h3 class="project__title">Vision AI</h3>
-              <p class="project__description">This is a Vision Computing Project based in Python that uses a camera to scan the environment and will show where the surrounding is, what it is, and the accuracy of the detection. It also has TTS to give audio feedback of the same. This project uses a pre-trained neural network called YOLO.<br>
-              </p>
-              <a href="https://github.com/Krupal-Shah/Vision-AI" class="btn btn--white">View Project</a>
-            </div>
-          </label>
-          <label class="card" for="item-5" id="song-5">
-            <div class="project project--5">
-              <h3 class="project__title">MovieMania - Movie Booking App</h3>
-              <p class="project__description">This is a Python Project for movie lovers. It uses the tkinter gui interface by python and MySQL as the database client in the backend. This was my first python project / app that I ever create and it turned out to be amazing.<br>
-              </p>
-              <a href="https://github.com/Krupal-Shah/MovieMania--The-best-movie-booking-app" class="btn btn--white">View Project</a>
-            </div>
-          </label>
-          <label class="card" for="item-6" id="song-6">
-            <div class="project project--6">
-              <h3 class="project__title">Unimates</h3>
-              <p class="project__description">This is an HTML project that is centered around international students. This project was part of Hacked Beta 2022, a Beta version of a hackathon hosted in Alberta.<br>
-              </p>
-              <a href="https://github.com/Krupal-Shah/UniMates" class="btn btn--white">View Project</a>
-            </div>
-          </label>
-          <label class="card" for="item-7" id="song-7">
-            <div class="project project--7">
-              <h3 class="project__title">Year of Zayed</h3>
-              <p class="project__description">This is a Python Project for movie lovers. It uses the tkinter gui interface by python and MySQL as the database client in the backend. This was my first python project / app that I ever create and it turned out to be amazing.<br>
-              </p>
-              <a href="https://github.com/Krupal-Shah/Year-of-Zayed" class="btn btn--white">View Project</a>
-            </div>
-          </label>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+    <div class="cursor"></div>
 
-  <section class="reveal" id="contact">
-    <div class="title">
-      <h2>Contact</h2>
-      <div>
-        <h2>Get in Touch</h2>
-      </div>
-    </div>
+    <header class="tab-hide" id="header-laptop">
+        <div class="logo-header">
+            <span class="logo-header-text cursor__change">KS</span>
+        </div>
+        <div class="mainmenu cursor__change">
+            <a href="#about" class="navigation__link navigation__link-1">About</a>
+            <a href="#skills" class="navigation__link navigation__link-1">Skills</a>
+            <a href="#portfolio" class="navigation__link navigation__link-1">Portfolio</a>
+            <a href="#projects" class="navigation__link navigation__link-1">Projects</a>
+            <a href="#contact" class="navigation__link navigation__link-1">Contact</a>
+        </div>
+        <div class="logo-mode cursor__change">
+            <img src="/img/dark_mode.png" alt="dark_mode" id="icon" />
+        </div>
+    </header>
+
+    <header class="hide">
+        <div class="logo-header">
+            <span class="logo-header-text cursor__change">KS</span>
+        </div>
+        <div class="navigation" id="navi-btn">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+        
+            <div class="navigation__background">&nbsp;</div>
+        
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#about" class="navigation__link navigation__link-2"><span>01</span>About</a></li>
+                    <li class="navigation__item"><a href="#skills" class="navigation__link navigation__link-2"><span>02</span>Skills</a></li>
+                    <li class="navigation__item"><a href="#portfolio" class="navigation__link navigation__link-2"><span>03</span>Portfolio</a></li>
+                    <li class="navigation__item"><a href="#projects" class="navigation__link navigation__link-2"><span>04</span>Projects</a></li>
+                    <li class="navigation__item"><a href="#contact" class="navigation__link navigation__link-2"><span>05</span>Contact</a></li>
+                    <li class="navigation__item cursor__change">
+                            <img src="/img/dark_mode.png" alt="dark_mode" id="icon" class="logo-mode" />
+                    </li>
+                </ul>
+            </nav>
+          </div>
+    </header>
+
+    <section class="container">
+        <div class="header">
+            <div class="header__bg"></div>
+            <div class="header__name">
+                <span>Hi, I am </span>
+                <span class="header__name--color">Krupal Shah</span>
+            </div>
+            <div class="header__title">
+                <span class="header__title-text">Driving Seamless Full-Stack Experiences</span>
+            </div>
+            <div class="header__image">
+                <img src="img/pic-2.png" alt="Krupal's Picture" class="header__image-img" />
+            </div>
+            <div class="header__button cursor__change">
+                <a href="#about" class="navigation__link navigation__link-3"><span> &#8595; </span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="about">
+        <div class="title">
+            <h2>About</h2>
+            <div class="text-up">
+                <h2>About Me</h2>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about__image">
+                <img src="img/profilepic.png" alt="Krupal's Picture" class="about__image-img" />
+            </div>
+            <div class="about__text">
+                <span>
+                    I am a second year computing science student at the University of
+                    Alberta. My passion lies in developing frontend and backend apps
+                    with more focus on the backend. My journey began with the
+                    development of MovieMania, a Python and SQL app which ignited my
+                    passion for coding. Over the years, I learnt many programming
+                    languages, web development tools, database management and so much
+                    more. <br /><br />
+                    My collaborative spirit shone during my second hackathon by the Dev
+                    Edmonton Society, where my team secured second position among the 15
+                    teams that participated. These experiences enhanced my teamwork,
+                    communication, and problem-solving abilities. As I embark on the
+                    next chapter, I am eager to apply my technical expertise and
+                    innovative drive to make a positive impact within a dynamic team,
+                    contributing to the ever-evolving tech landscape.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="skills">
+        <div class="title">
+            <h2>Skills</h2>
+            <div class="text-up">
+                <h2>Technical Skills</h2>
+            </div>
+        </div>
+        <div class="skills__filter">
+            <input type="radio" class="skills__checkbox" id="all" checked name="filter"><label for="all" class="skills__button">All</label>
+            <input type="radio" class="skills__checkbox" id="front" name="filter"><label for="front" class="skills__button">Frontend</label>
+            <input type="radio" class="skills__checkbox" id="back" name="filter"><label for="back" class="skills__button">Backend</label>
+            <input type="radio" class="skills__checkbox" id="tools" name="filter"><label for="tools" class="skills__button">Tools & Frameworks</label>
+            <input type="radio" class="skills__checkbox" id="soft" name='filter'><label for="soft" class="skills__button">Soft Skills</label>
+        </div>
+        <div class="skills__container">
+            <span class="skills-3 skills-back">C</span>
+            <span class="skills-2 skills-front">SASS</span>
+            <span class="skills-1 skills-tools">GIT</span>
+            <span class="skills-2 skills-soft">Critical Thinking</span>
+            <span class="skills-2 skills-tools">Terminal</span>
+            <span class="skills-2 skills-back">MySQL</span>
+            <span class="skills-4 skills-back">Python3</span>
+            <span class="skills-2 skills-soft">Algorithms</span>
+            <span class="skills-2 skills-soft">Gujarati</span>
+            <span class="skills-2 skills-front">CSS3</span>
+            <span class="skills-3 skills-soft">Collaboration</span>
+            <span class="skills-2 skills-soft">Teamwork</span>
+            <span class="skills-1 skills-back">RISC V</span>
+            <span class="skills-3 skills-soft">Positive Attitude</span>
+            <span class="skills-2 skills-soft">Leadership</span>
+            <span class="skills-2 skills-soft">Problem Solving</span>
+            <span class="skills-2 skills-soft">Communication</span>
+            <span class="skills-1 skills-soft">French</span>
+            <span class="skills-3 skills-back">C++</span>
+            <span class="skills-4 skills-front">JavaScript</span>
+            <span class="skills-2 skills-back">MsOffice</span>
+            <span class="skills-1 skills-back">Machine Learning</span>
+            <span class="skills-2 skills-back">Flask</span>
+            <span class="skills-1 skills-tools">Netlify</span>
+            <span class="skills-2 skills-back">MongoDB</span>
+            <span class="skills-2 skills-soft">Hindi</span>
+            <span class="skills-3 skills-back">SQL</span>
+            <span class="skills-2 skills-tools">VMWare</span>
+            <span class="skills-4 skills-soft">Time Management</span>
+            <span class="skills-3 skills-soft">English</span>
+            <span class="skills-1 skills-back">NLP</span>
+            <span class="skills-3 skills-tools">Windows</span>
+            <span class="skills-2 skills-tools">Debuggers</span>
+            <span class="skills-2 skills-back">Node.Js</span>
+            <span class="skills-2 skills-tools">Linux</span>
+            <span class="skills-3 skills-tools">GitHub</span>
+            <span class="skills-2 skills-front">HTML5</span>
+            <span class="skills-2 skills-tools">Prettier</span>
+            <span class="skills-2 skills-tools">OOP</span>
+        </div>
+    </section>
+
+    <section class="container" id="portfolio">
+        <div class="title">
+            <h2>Exposure</h2>
+            <div class="text-up">
+                <h2>Professional Experience</h2>
+            </div>
+        </div>
+        <div class="exp__section">
+            <div class="exp__items">
+                <div class="card left">
+                    <div class="content">
+                        <div class="content__date"><span>Sep. 2022 - Present</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>BSc. Honors in Computing Science</span></div>
+                            <!-- <div class="content__title"><span>BSc. Honors in Computing Science - Artificial Intelligence</span></div> -->
+                            <div class="content__subtitle">University of Alberta</div>
+                            <div class="content__description">Mastered Data Structures, Algorithms, AI, Machine Learning, Computer Architecture, and design principles, establishing a robust foundation. Applied theoretical knowledge through hands-on coding, optimizing algorithms for real-world solutions.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card right">
+                    <div class="content">
+                        <div class="content__date"><span>Apr. 2023 - May 2023</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>Advanced CSS and SASS</span></div>
+                            <div class="content__subtitle">Udemy</div>
+                            <div class="content__description">Learnt advanced CSS techniques, deepening my expertise in front-end development and gained knowledge of industrial powerful tools like SASS enhancing my ability to manage complex styling requirements in a more efficient and modular manner. </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card left">
+                    <div class="content">
+                        <div class="content__date"><span>May. 2023 - Jun. 2023</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>The Complete JavaScript Course 2023</span></div>
+                            <div class="content__subtitle">Udemy</div>
+                            <div class="content__description">Gained a complete understanding of JavaScript, learning the different the language's core concepts and advanced functionalities. Honed my skills in developing dynamic and interactive web applications which gave me a solid foundation in JavaScript.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card right">
+                    <div class="content">
+                        <div class="content__date"><span>Jun. 2023 - Oct. 2023</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>Produce Clerk</span></div>
+                            <div class="content__subtitle">North Central Co-op Supermarket</div>
+                            <div class="content__description">Played a pivotal role in ensuring quality of the department by meticulously inspecting and organizing fruits and vegetables, managing inventory levels, and implementing effective merchandising strategies to enhance the visual appeal of the produce section. Additionally, I engaged with customers, providing assistance, product information, and ensuring a positive shopping experience.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card left">
+                    <div class="content">
+                        <div class="content__date"><span>Sep. 2023 - Present</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>Software Developer</span></div>
+                            <div class="content__subtitle">UASTARR - Student Team for Alberta Rocketry Research</div>
+                            <div class="content__description">Assisted in various project which involved learning new languages and engaging with the team. Build apps and websites which helped in the recovery of the rocket and showcasing the team.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card right">
+                    <div class="content">
+                        <div class="content__date"><span>Oct. 2023</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>Job Shadow</span></div>
+                            <div class="content__subtitle">PLACE Inc.</div>
+                            <div class="content__description">Shadowed VP Product & AI, Roberto Moreno, gaining practical insights into daily software development operations, understanding diverse programming languages' applications, and learning effective communication and project management strategies in professional development environments.</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card left">
+                    <div class="content">
+                        <div class="content__date"><span>Jan. 2024 - Present</span></div>
+                        <div class="content-box">
+                            <div class="content__title"><span>Student Developer</span></div>
+                            <div class="content__subtitle">ARVP - Alberta</div>
+                            <div class="content__description">Learnt industrial standard web animations and learned new technologies to optimize the code.</div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="projects">
+        <div class="title">
+            <h2>Projects</h2>
+            <div class="text-up">
+              <h2>My Projects</h2>
+            </div>
+        </div>
+        <div class="proj__container">
+            <div class="proj__wrapper">
+                <i id="proj__left"><svg class="proj__move">
+                    <use xlink:href="img/sprite.svg#icon-circle-left"></use>
+                </svg></i>
+                <ul class="proj__carousel">
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/unimates.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>UniMates</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/UniMates">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://unimates.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <span>A blog for all international students coming to Canada. I have shared in here, all the issues that I faced and have created a checklist to help students prepare their travel to Canada. Build using HTML, CSS, JavaScript.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/scheduler.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>Scheduler</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/Scheduler">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://scheduler-0r4v-main-qnxr6lu2aq-wm.a.run.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <span>
+                            A responsive web app built at the Dev Edmonton Society Hackathon for which we securing second position. It automatically generates schedules based on user-inputted tasks. It is build using HTML, CSS, JavaScript, Flask.
+                        </span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/movie.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>MovieMania</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/MovieMania--The-best-movie-booking-app">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <!-- <a href="https://unimates.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a> -->
+                            </div>
+                        </div>
+                        <span>This is an app for movie lover. It is a cinema booking management system that as a login system, booking page, payment and database. This was the first app I have ever built. It is build using Python GUI - Tkinter and SQL.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/rizzume.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>Rizzume</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/rizzume">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <!-- <a href="https://unimates.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a> -->
+                            </div>
+                        </div>
+                        <span>Developed a Chrome Extension to to automatically tailor Resumes and Cover letter based on Master resume and Job Description. It also has a feature where a bot will interview you as next round. Build using ChatGPT's API, web tools and Flask.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/vision.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>Vision AI</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/Vision-AI">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <!-- <a href="https://unimates.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a> -->
+                            </div>
+                        </div>
+                        <span>This is a Computer Vision project that uses YoloV3 model to detect items and create boxes to show where it is in the surroudings. It uses TTS to give audio feedback as well. Built using Python.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/nature.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>NatureHub</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/Project-Nature-Website">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://mynaturehub.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <span>This is a website template built using SASS to learn and explore the various uses and power of SASS. This is a responsive website that can be used as a template for other websites. Built using Web tools.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/yoz.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>Year of Zayed</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/Year-of-Zayed">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://yearofzayed.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <span>This is a website built to showcase the achievements of His Highness Sheikh Zayed Bin Sultan Al Nahyan as part of the Year of Zayed celebrated in 2017. This was the first website I ever built using HTML and CSS.</span>
+                  </li>
+                  <li class="proj__card">
+                    <div class="proj__img"><img src="img/dicegame.png" alt="img" draggable="false"></div>
+                        <div class="proj__title">
+                            <h2>The Dice Game</h2>
+                            <div class="proj__icons">
+                                <a href="https://github.com/Krupal-Shah/TheDiceGame-Multiplayer">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://thedicegamemultiplayer.netlify.app/">
+                                    <svg class="proj__icon">
+                                        <use xlink:href="img/sprite.svg#icon-sphere"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <span>An interactive multiplayer web game where players compete in getting the highest scores of the 3 rounds. Created using JavaScript writing well-engineered, reliable, scalable, and maintainable codes to create a fully responsive application.</span>
+                  </li>
+                </ul>
+                <i id="proj__right"><svg class="proj__move">
+                    <use xlink:href="img/sprite.svg#icon-circle-right"></use>
+                </svg></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="contact">
+        <div class="title">
+          <h2>Contact</h2>
+          <div class="text-up">
+            <h2>Get in Touch</h2>
+          </div>
+        </div>
+        
+        <div class="section__contact">
+            <div class="contact__line"></div>
+          <div class="info">
+            <span class="info__text">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</span>
+            <br>
+            <div class="icon">
+                <a href="mailto:krupalshah74@gmail.com">
+                <svg class="info__icon">
+                    <use xlink:href="img/sprite.svg#icon-envelop"></use>
+                </svg><span class="icon__text">
+                    krupalshah74@gmail.com
+                </span>
+                </a>
+        
+                <a href="tel:+17807168607">
+                <svg class="info__icon">
+                    <use xlink:href="img/sprite.svg#icon-phone"></use>
+                </svg>
+                <span class="icon__text">
+                    +1 780-716 8607
+                </span>
+                </a>
+        
+                <a href="https://www.github.com/Krupal-Shah/" target="_blank">
+                <svg class="info__icon">
+                    <use xlink:href="img/sprite.svg#icon-github"></use>
+                </svg><span class="icon__text">
+                    Krupal-Shah
+                </span>
+                </a>
+        
+                <a href="https://www.linkedin.com/in/krupalshah74/" target="_blank">
+                <svg class="info__icon">
+                    <use xlink:href="img/sprite.svg#icon-linkedin"></use>
+                </svg><span class="icon__text">
+                    Krupal-Shah
+                </span>
+                </a>
+            </div>
+        </div>
     
-    <div class="section__contact">
-      <div class="info">
-        <span>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</span>
-        <br>
+            <form method="POST" onsubmit="sendEmail(); reset(); return false;" class="form">
+              <div class="form__group">
+                  <input type="text" name="name" id="name" placeholder="Full Name" class="form__input" required>
+                  <label for="name" class="form__label">Full Name</label>
+              </div>
+              <div class="form__group">
+                  <input type="email" name="email" id="email" placeholder="Email Address" class="form__input" required>
+                  <label for="email" class="form__label">Email</label>
+              </div>
+              <div class="form__group">
+                <textarea id="message" name="message" placeholder="Enter your Message ..." class="form__input" style="height:20rem" required></textarea>
+                <label for="subject" class="form__label">Subject</label>
+              </div>
+              <!-- <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div> -->
+              <div class="form__submit" id="form_button">
+                  <input type="submit" value="Submit">  
+              </div>
+        </div>
+        <div class="contact">
+        </div>
+    
+    </section>
 
-        <a href="mailto:krupalshah74@gmail.com">
-          <svg class="info__icon">
-            <use xlink:href="img/sprite.svg#icon-envelop"></use>
-          </svg><br>krupalshah74@gmail.com
-        </a><br>
+    <footer>
+        <div class="footer-box">
+            <div class="footer-box__title">
+                <span>© 2024 All rights reserved. Designed & Built by </span>
+                <span class="footer-box--name">Krupal Shah</span>
+            </div>
+        </div>
+    </footer>
 
-        <a href="tel:+17807168607">
-          <svg class="info__icon">
-            <use xlink:href="img/sprite.svg#icon-phone"></use>
-          </svg><br>+1 780-716 8607
-        </a><br>
+    <script src="script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script.js"></script>
 
-        <a href="https://www.github.com/Krupal-Shah/" target="_blank">
-          <svg class="info__icon">
-            <use xlink:href="img/sprite.svg#icon-github"></use>
-          </svg><br>Krupal-Shah
-        </a><br>
+    <script>
+        function sendEmail(){
+        var body = "Name: " + document.getElementById("name").value + "<br/>" + "Email: " + document.getElementById("email").value + "<br/>" + "Message: " + document.getElementById("message").value;
+        Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "krupalshah74@gmail.com",
+            Password : "52135CBD80F3987F1EA8CAFDB395ED03B85E",
+            To : 'krupalshah74@gmail.com',
+            From : 'krupalshah017@gmail.com',
+            Subject : "New message on website",
+            Body : body
+        }).then(
+            message => alert(message)
+        );
+        }
+    </script>
 
-        <a href="https://www.linkedin.com/in/krupalshah74/" target="_blank">
-          <svg class="info__icon">
-            <use xlink:href="img/sprite.svg#icon-linkedin"></use>
-          </svg><br>Krupal-Shah
-        </a><br>
-      </div>
-
-      <div class="form">
-        <form action="sendmail.php" method="POST">
-          <div class="form__group">
-              <input type="text" name="name" id="name" placeholder="Full Name" class="form__input" required>
-              <label for="name" class="form__label">Full Name</label>
-          </div>
-          <div class="form__group">
-              <input type="email" name="email" id="email" placeholder="Email Address" class="form__input" required>
-              <label for="email" class="form__label">Email</label>
-          </div>
-          <div class="form__group">
-            <textarea id="message" name="subject" placeholder="Enter your Message ..." class="form__input" style="height:20rem" required></textarea>
-            <label for="subject" class="form__label">Subject</label>
-          </div>
-          <!-- <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div> -->
-          <div class="form__submit">
-              <input type="submit" value="Submit">  
-          </div>
-      </div> 
-    </div>
-    <div class="contact">
-    </div>
-
-  </section>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="script.js"></script>
 </body>
+
 </html>

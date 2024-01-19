@@ -1,0 +1,49 @@
+.container{
+    min-height: 100vh;
+    width: 100%;
+    @include respond(tab-land){
+        min-height: 60vh;
+    }
+}
+
+.cursor{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--black);
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+
+    @include respond(tab-land){
+        opacity: 0;
+    }
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    top: 1%;
+
+    & > h2{
+        font-size: 7rem;
+        color: var(--primary-500);
+        font-family: "Agbalumo", system-ui;
+    }
+
+    & div{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        text-align: center;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        font-size: 2.7rem;
+    }
+    .text-up{
+        transform: translate(-50%, -50%);
+        color: var(--primary-100);
+    }
+}

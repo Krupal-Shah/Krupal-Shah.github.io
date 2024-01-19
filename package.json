@@ -1,8 +1,8 @@
 {
-  "name": "portfolio_krupal",
-  "version": "1.0.0",
-  "description": "Website",
-  "main": "index.js",
+  "name": "portfolio-website",
+  "version": "2.0.0",
+  "description": "Personal Portfolio Project",
+  "main": "script.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
@@ -12,13 +12,21 @@
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krupal-Shah/Krupal-Shah.github.io.git"
+  },
   "author": "Krupal Shah",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krupal-Shah/Krupal-Shah.github.io/issues"
+  },
+  "homepage": "https://github.com/Krupal-Shah/Krupal-Shah.github.io#readme",
   "dependencies": {
-    "autoprefixer": "^10.4.15",
+    "autoprefixer": "^10.4.16",
     "concat": "^1.0.3",
     "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^11.0.0"
   }
 }
