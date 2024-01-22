@@ -8,18 +8,20 @@
 
 .cursor{
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: var(--black);
-    transition: 0.1s;
+    width: 10px;
+    height: 10px;
+    // border-radius: 100%;
+    // background-color: var(--black);
+    // // transition: 0.1s;
     transform: translate(-50%, -50%);
+    // // pointer-events: none;
+    z-index: 3000;
     pointer-events: none;
-    z-index: 1;
-
-    @include respond(tab-land){
-        opacity: 0;
-    }
+    // position: fixed;
+    padding: 0.3rem;
+    background-color:  var(--text);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
 .title{
@@ -29,7 +31,7 @@
 
     & > h2{
         font-size: 7rem;
-        color: var(--primary-500);
+        color: var(--primary-600);
         font-family: "Agbalumo", system-ui;
     }
 

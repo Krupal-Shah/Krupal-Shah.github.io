@@ -22,13 +22,16 @@ header {
         position: relative;
         top: 0.4rem;
         left: 0.8rem;
+        @include respond(tab-land){
+            left: 1rem;
+        }
     }
     @include respond(tab-land){
-        height: 6rem;
-        width: 6rem;
+        height: 7rem;
+        width: 7rem;
         position: relative;
-        top: 3rem;
-        font-size: 3.5rem;
+        top: 2.5rem;
+        font-size: 4rem;
     }
 }
 
@@ -88,12 +91,14 @@ header {
 
         @include respond(tab-port){
             grid-column: 3 / span 5;
-            justify-self: center;
+
         }
 
         @include respond(phone){
             grid-column: 2 / span 6;
             font-size: 2rem;
+            justify-self: center;
+
         }
 
         &--color{
@@ -106,12 +111,12 @@ header {
     }
 
     &__image{
-        grid-row: 2 / span 3;
+        grid-row: 1 / span 5;
         grid-column: 6 / span 2;
         align-self: center;
 
         @include respond(tab-land){
-            grid-row: 2 / span 4;
+            grid-row: 2 / span 3;
         }
 
         
@@ -143,10 +148,11 @@ header {
             -webkit-text-fill-color: transparent;
         }
         @include respond(tab-port){
-            grid-column: 2 / span 5;
-            margin-left: 2rem;
+            grid-column: 3 / span 5;
         }
         @include respond(phone){
+            margin-left: 2rem;
+            grid-column: 2 / span 5;
             font-size: 4.5rem;
         }
     }
@@ -189,8 +195,9 @@ header {
         position: fixed;
         padding: 2rem;
         border-radius: 50px;
-        background-color: rgba(116, 116, 116, 0.475);
+        background-color: var(--box);
         z-index: 40;
+        box-shadow: 0px 5px 5px red;
     }
 }
 
@@ -204,7 +211,7 @@ header {
     &__title{
         font-size: 2rem;
         text-align: center;
-        color: var(--black);
+        color: var(--text);
     }
 
     &--name{
@@ -221,6 +228,7 @@ header {
             font-weight: 300;
             text-decoration: none;
             text-transform: uppercase;
+            cursor: none;
             
             span{
                 margin-right: 1.5rem;

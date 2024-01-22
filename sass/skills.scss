@@ -32,8 +32,8 @@
     &__checkbox{
         display: none;
         &:checked + .skills__button{
-            background-color: var(--white);
-            color: var(--black)
+            background-color: var(--text);
+            color: var(--box)
         }
     }
     

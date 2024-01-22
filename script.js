@@ -1,6 +1,6 @@
-let intro = document.querySelector(".logo");
-let logo = document.querySelectorAll(".logo-intro");
-let text = document.querySelector(".logo-intro-text-2");
+const intro = document.querySelector(".logo");
+const logo = document.querySelectorAll(".logo-intro");
+const text = document.querySelector(".logo-intro-text-2");
 
 window.addEventListener('DOMContentLoaded', ()=>{
     setTimeout(() => {
@@ -58,24 +58,25 @@ document.addEventListener('mousemove', (e)=>{
 
     cursorchange.forEach((change)=>{
         change.addEventListener('mouseenter', ()=>{
-            cursor.style.backgroundColor = 'var(--white)';
+            cursor.style.scale = 2;
+            cursor.style.backgroundColor = "var(--box)"
         })
 
         change.addEventListener('mouseleave', ()=>{
-            cursor.style.backgroundColor = 'var(--black)';
+            cursor.style.scale = 1;
+            cursor.style.backgroundColor = "var(--text)"
 
         })
     })
 })
 
-var links = document.querySelectorAll('.navigation__link-2');
+var link = document.querySelectorAll('.navigation__link-2');
 var checkbox = document.querySelector('.navigation__checkbox');
 checkbox.addEventListener('click', ()=>{
     if (checkbox.checked == true){
-        links.forEach((link)=>{
-            link.addEventListener('click', ()=>{
+        link.forEach((check_link)=>{
+            check_link.addEventListener('click', ()=>{
                 checkbox.checked = false;
-                console.log("hello");
             })
         })
     };
@@ -86,7 +87,6 @@ const skills = document.querySelectorAll('.skills__container span');
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         const category = this.id;
-        console.log(category);
         skills.forEach(skill => {
             const skillCategories = skill.classList[1].replace('skills-', '');
             if (category == "all"){
@@ -105,7 +105,6 @@ const header = document.getElementById("header-laptop");
 
 document.addEventListener("scroll", function() {
     const rect = about.getBoundingClientRect();
-    console.log(rect.top);
     if (rect.top < 0 && !(header.classList.contains("header__back"))){
         header.classList.add("header__back");
     } else if (rect.top > 0 && header.classList.contains("header__back")){
