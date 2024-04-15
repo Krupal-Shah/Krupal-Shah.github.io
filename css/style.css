@@ -51,7 +51,8 @@ html {
 body {
   background-color: var(--background);
   overflow-x: hidden;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  transition: all .5s; }
 
 .logo {
   position: fixed;
