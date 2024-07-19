@@ -1,11 +1,11 @@
 // Color Variables
 :root{
     @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tsukimi+Rounded:wght@400;500&display=swap'); 
-    --primary-100:  #5000bc;
-    --primary-200:  #692bc4;
-    --primary-300:  #7f47cc;
-    --primary-400:  #9461d4;
-    --primary-500:  #a77bdc;
+    --primary-100:  #6906e5;
+    --primary-200:  #7c15e2;
+    --primary-300:  #9d32d6;
+    --primary-400:  #ca5dc6;
+    --primary-500:  #de72be;
     --primary-600:  #e0c4fe;
     --secondary-100: #d500ec;
     --secondary-200: #e12bf4;
@@ -68,6 +68,9 @@ html{
     font-size: 62.5%;
     font-family: "Poppins", sans-serif;
     cursor: none;
+    @include respond(tab-port){
+        cursor: pointer;
+    }
 }
 
 *,

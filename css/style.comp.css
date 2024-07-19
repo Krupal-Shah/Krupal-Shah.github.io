@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Tsukimi+Rounded:wght@400;500&display=swap");
 :root {
-  --primary-100:  #5000bc;
-  --primary-200:  #692bc4;
-  --primary-300:  #7f47cc;
-  --primary-400:  #9461d4;
-  --primary-500:  #a77bdc;
+  --primary-100:  #6906e5;
+  --primary-200:  #7c15e2;
+  --primary-300:  #9d32d6;
+  --primary-400:  #ca5dc6;
+  --primary-500:  #de72be;
   --primary-600:  #e0c4fe;
   --secondary-100: #d500ec;
   --secondary-200: #e12bf4;
@@ -38,6 +38,9 @@ html {
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
   cursor: none; }
+  @media (max-width: 56.25em) {
+    html {
+      cursor: pointer; } }
 
 *,
 *::before,
@@ -163,17 +166,21 @@ header {
     color: var(--text);
     font-family: "Tsukimi Rounded", sans-serif;
     grid-column: 2 / span 3;
-    grid-row: 2;
-    align-self: end;
+    grid-row: 1 / span 2;
+    align-self: center;
     margin-bottom: 2rem;
     font-weight: 700; }
     @media (max-width: 56.25em) {
       .header__name {
-        grid-column: 3 / span 5; } }
+        grid-column: 3 / span 5;
+        grid-row: 2 / span 2; } }
     @media (max-width: 37.5em) {
       .header__name {
         grid-column: 2 / span 6;
         font-size: 2rem;
+        justify-self: center;
+        grid-column: 1 / span 8;
+        align-self: center;
         justify-self: center; } }
     .header__name--color {
       color: var(--primary-300);
@@ -204,7 +211,8 @@ header {
     color: var(--text);
     font-family: "Agbalumo", system-ui;
     grid-column: 2 / span 3;
-    grid-row: 3 / span 3; }
+    grid-row: 2 / span 3;
+    align-self: center; }
     .header__title-text {
       background: linear-gradient(45deg, var(--primary-100), var(--secondary-100));
       /* Example gradient colors */
@@ -213,11 +221,15 @@ header {
       -webkit-text-fill-color: transparent; }
     @media (max-width: 56.25em) {
       .header__title {
-        grid-column: 3 / span 5; } }
+        grid-column: 3 / span 5;
+        grid-row: 3 / span 3; } }
     @media (max-width: 37.5em) {
       .header__title {
         margin-left: 2rem;
-        grid-column: 2 / span 5;
+        text-align: center;
+        grid-column: 1 / span 8;
+        align-self: center;
+        justify-self: center;
         font-size: 4.5rem; } }
   .header__button {
     width: 5rem;
@@ -232,7 +244,7 @@ header {
     justify-self: center; }
     @media (max-width: 37.5em) {
       .header__button {
-        grid-row: 7 / span 1; } }
+        grid-row: 7; } }
     .header__button span {
       font-size: 3rem;
       position: relative;
@@ -255,6 +267,30 @@ header {
     background-color: var(--box);
     z-index: 40;
     box-shadow: 0px 5px 5px red; }
+  .header__resume {
+    grid-column: 2 / span 3;
+    grid-row: 5;
+    align-self: center; }
+    @media (max-width: 37.5em) {
+      .header__resume {
+        grid-column: 1 / span 8;
+        align-self: center;
+        justify-self: center;
+        grid-row: 6; } }
+    .header__resume-button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      text-decoration: none;
+      background: linear-gradient(135deg, #7B00FF, #FF83FF);
+      font-weight: 600;
+      transition: all .5s;
+      color: var(--white);
+      display: inline-block;
+      border-radius: 2rem; }
+      .header__resume-button:hover, .header__resume-button:active {
+        background-position: 100%;
+        color: var(--box);
+        transform: scale(1.1); }
 
 .mainmenu {
   color: var(--text); }
@@ -885,6 +921,9 @@ header {
   background-color: var(--text);
   border-radius: 50%;
   transition: transform 0.3s ease; }
+  @media (max-width: 56.25em) {
+    .cursor {
+      display: none; } }
 
 .title {
   position: relative;

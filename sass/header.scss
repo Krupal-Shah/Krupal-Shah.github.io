@@ -84,13 +84,15 @@ header {
         font-family: "Tsukimi Rounded", sans-serif;
         grid-column: 2 / span 3;
         // text-shadow: .5rem .5rem 10px rgba(255,255,255,0.3);
-        grid-row: 2;
-        align-self: end;
+        grid-row: 1 / span 2;
+        align-self: center;
+        // justify-self: center;
         margin-bottom: 2rem;
         font-weight: 700;
 
         @include respond(tab-port){
             grid-column: 3 / span 5;
+            grid-row: 2 / span 2;
 
         }
 
@@ -98,7 +100,9 @@ header {
             grid-column: 2 / span 6;
             font-size: 2rem;
             justify-self: center;
-
+            grid-column: 1 / span 8;
+            align-self: center;
+            justify-self: center;
         }
 
         &--color{
@@ -139,7 +143,8 @@ header {
         color: var(--text);
         font-family: "Agbalumo", system-ui;
         grid-column: 2 / span 3;
-        grid-row: 3 / span 3;
+        grid-row: 2 / span 3;
+        align-self: center;
         
         &-text{
             background: linear-gradient(45deg, var(--primary-100), var(--secondary-100)); /* Example gradient colors */
@@ -149,10 +154,14 @@ header {
         }
         @include respond(tab-port){
             grid-column: 3 / span 5;
+            grid-row: 3 / span 3;
         }
         @include respond(phone){
             margin-left: 2rem;
-            grid-column: 2 / span 5;
+            text-align: center;
+            grid-column: 1 / span 8;
+            align-self: center;
+            justify-self: center;
             font-size: 4.5rem;
         }
     }
@@ -169,7 +178,7 @@ header {
         align-self: center;
         justify-self: center;
         @include respond(phone){
-            grid-row: 7 / span 1;
+            grid-row: 7;
         }
         & span{
             font-size: 3rem;
@@ -198,6 +207,37 @@ header {
         background-color: var(--box);
         z-index: 40;
         box-shadow: 0px 5px 5px red;
+    }
+
+    &__resume{
+        grid-column: 2 / span 3;
+        grid-row: 5;
+        align-self: center;
+        @include respond(phone){
+            grid-column: 1 / span 8;
+            align-self: center;
+            justify-self: center;
+            grid-row: 6;
+        }
+
+        &-button{
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            // transform: skewX(-20deg);
+            text-decoration: none;
+            background: linear-gradient(135deg, #7B00FF, #FF83FF);
+            font-weight: 600;
+            transition: all .5s;
+            color:  var(--white);
+            display: inline-block;
+            border-radius: 2rem;
+            &:hover,
+            &:active{
+                background-position: 100%;
+                color: var(--box);
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
