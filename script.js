@@ -3,6 +3,8 @@ const logo = document.querySelectorAll(".logo-intro");
 const text = document.querySelector(".logo-intro-text-2");
 
 window.addEventListener('DOMContentLoaded', ()=>{
+    // Ensure dark mode is the default on initial load
+    document.body.classList.add("dark-theme");
     setTimeout(() => {
         logo[0].classList.add('active');
         setTimeout(() => {
@@ -30,6 +32,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 var icon = document.getElementById("icon");
 var icon2 = document.querySelectorAll("#icon")[1];
 
+// Set icon graphics to match default dark theme state
+if (document.body.classList.contains("dark-theme")){
+    if (icon) icon.src = "img/light_mode.png";
+    if (icon2) icon2.src = "img/light_mode.png";
+}
+
 icon.onclick = function(){
     document.body.classList.toggle("dark-theme");
     if (document.body.classList.contains("dark-theme")){
@@ -46,6 +54,36 @@ icon2.onclick = function(){
     } else {
         icon2.src = "img/dark_mode.png"
     }
+}
+
+// EmailJS send handler replacing insecure SMTPJS
+function sendEmail(){
+    if (!window.emailjs){
+        alert('Email service failed to load. Please try again later.');
+        return false;
+    }
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const templateParams = {
+        title: "New message on website",
+        name: name,
+        time: new Date().toLocaleString(),
+        email: email,   
+        message: message
+    };
+
+    // TODO: replace SERVICE_ID and TEMPLATE_ID with your EmailJS values
+    window.emailjs.send('service_2mrxg6g', 'template_rr5j2e7', templateParams)
+        .then(function(response) {
+            alert('Message sent successfully');
+        }, function(error) {
+            alert('Failed to send message');
+        });
+
+    return false;
 }
 
 
