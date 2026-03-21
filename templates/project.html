@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block title %}Projects · Krupal Shah{% endblock %}
+{% block content %}
+<section class="card section" aria-label="Projects">
+  <h1 class="h1" style="margin-bottom: 6px">Projects</h1>
+
+  {% if request.user.is_authenticated and request.user.is_superuser %}
+  <div class="actions" style="margin-bottom: 16px">
+    <a class="pill" href="{% url 'projects:add' %}">Add Project</a>
+    <form method="post" action="{% url 'projects:cleanup_images' %}">
+      {% csrf_token %}
+      <button
+        class="pill"
+        type="submit"
+        onclick="
+          return confirm(
+            'Delete all markdown images that are not referenced by any project?',
+          );
+        "
+      >
+        Cleanup Unused Images
+      </button>
+    </form>
+    <form method="post" action="{% url 'admin_logout' %}">
+      {% csrf_token %}
+      <button class="pill" type="submit">Logout</button>
+    </form>
+  </div>
+  {% if cleanup_result %}
+  <p class="project-meta" style="margin-bottom: 16px">
+    Image cleanup complete. Deleted: {{ cleanup_result.deleted }}. Kept: {{cleanup_result.kept }}.
+  </p>
+  {% endif %} {% endif %} {% if projects %}
+  <div class="grid" role="list">
+    {% for p in projects %}
+    <article class="card project-card" role="listitem">
+      <h2 class="project-title">{{ p.title }}</h2>
+      {% if p.tagline %}
+      <p class="project-meta">{{ p.tagline }}</p>
+      {% endif %} {% if p.description %}
+      <p class="project-desc">
+        {{ p.description|cut:"## About the project"|truncatechars:220 }}
+      </p>
+      {% else %}
+      <p class="project-desc">Lorem ipsum placeholder project description.</p>
+      {% endif %} {% if p.tech_stack %}
+      <p class="project-meta">Tech: {{ p.tech_stack }}</p>
+      {% endif %}
+
+      <div class="actions">
+        <a class="pill" href="{% url 'projects:detail' p.id %}">Details</a>
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+        <a class="pill" href="{% url 'projects:edit' p.id %}">Edit</a>
+        <form
+          method="post"
+          action="{% url 'projects:delete' p.id %}"
+          onsubmit="return confirm('Delete this project?');"
+        >
+          {% csrf_token %}
+          <button class="pill" type="submit">Delete</button>
+        </form>
+        {% endif %} {% if p.github_url %}
+        <a
+          class="pill"
+          href="{{ p.github_url }}"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub</a
+        >
+        {% endif %} {% if p.live_url %}
+        <a class="pill" href="{{ p.live_url }}" target="_blank" rel="noreferrer"
+          >Live</a
+        >
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="card project-card" style="background: rgba(255, 255, 255, 0.02)">
+    <h2 class="project-title">No projects yet</h2>
+    <p class="project-desc">
+      Add projects in the Django admin to populate this section dynamically.
+    </p>
+    <div class="actions">
+      <a class="pill" href="{% url 'admin_login' %}" rel="nofollow"
+        >Open admin login</a
+      >
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

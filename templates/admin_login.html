@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Admin Login · Krupal Shah
+{%endblock%} {% block page_class %}auth-page{% endblock %} {% block content %}
+<section class="card section auth-shell" aria-label="Admin login">
+  <h1 class="h1" style="margin-bottom: 12px">Admin Login</h1>
+  <p class="section-text" style="margin-bottom: 14px">
+    Superuser credentials are required.
+  </p>
+
+  {% if error %}
+  <p class="auth-error">{{ error }}</p>
+  {% endif %}
+
+  <form method="post" class="auth-form">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" required />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required />
+
+    <button class="btn" type="submit">Login</button>
+  </form>
+</section>
+{% endblock %}
