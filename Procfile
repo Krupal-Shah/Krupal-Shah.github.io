@@ -1,1 +1,1 @@
-web: gunicorn --chdir transparent config.wsgi
+web: gunicorn krupal.wsgi --log-file -

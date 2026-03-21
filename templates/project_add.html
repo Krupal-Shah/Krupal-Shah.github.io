@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block title %}{% if is_edit %}Edit Project {%
-else%}Add Project{% endif %} · Krupal Shah{% endblock%} {% block content %}
+{% load static %} {% extends 'base.html' %} {% block title %}{% if is_edit
+%}Edit Project {%else%}Add Project{% endif %} · Krupal Shah{% endblock%} {%
+block content %}
 <section class="card section" aria-label="Add project">
   <a class="pill" href="{% url 'projects:index' %}">← Back to projects</a>
   <h1 class="h1" style="margin-top: 14px; margin-bottom: 10px">
@@ -104,18 +105,8 @@ else%}Add Project{% endif %} · Krupal Shah{% endblock%} {% block content %}
   </form>
 </section>
 {% endblock %} {% block extra_scripts %}
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark.min.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/lib/common.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath@1.0.0/texmath.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/vendor-markdown.bundle.css' %}" />
+<script src="{% static 'js/vendor-markdown.bundle.js' %}"></script>
 <script>
   (function () {
     var textarea = document.getElementById("description");
