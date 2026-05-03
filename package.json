@@ -1,13 +1,31 @@
 {
+  "name": "krupal-shah-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build:markdown": "esbuild frontend/vendor-markdown.js --bundle --minify --platform=browser --format=iife --outfile=static/js/vendor-markdown.bundle.js && esbuild frontend/vendor-markdown.css --bundle --minify --loader:.woff2=file --loader:.woff=file --loader:.ttf=file --asset-names=markdown-assets/[name]-[hash] --outfile=static/css/vendor-markdown.bundle.css",
-    "build": "npm run build:markdown"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "devDependencies": {
-    "esbuild": "^0.27.4",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.11",
-    "markdown-it": "^14.1.0",
-    "markdown-it-texmath": "^1.0.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.2",
+    "rehype-highlight": "^7.0.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
   }
 }
