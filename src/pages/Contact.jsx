@@ -1,9 +1,13 @@
 import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import emailjs, { init } from '@emailjs/browser'
 
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || ''
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ''
 const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || ''
+
+if (EMAILJS_PUBLIC_KEY) {
+  init(EMAILJS_PUBLIC_KEY)
+}
 
 function EmailIcon() {
   return (
@@ -46,8 +50,7 @@ export default function Contact() {
       await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        { publicKey: EMAILJS_PUBLIC_KEY }
+        formRef.current
       )
       setStatus("Message sent! I'll get back to you soon.")
       formRef.current.reset()
