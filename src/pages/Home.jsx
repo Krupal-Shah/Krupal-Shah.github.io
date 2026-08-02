@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useImages } from '../hooks/useImages'
-
-const DRIVE_IMAGE_URL = (id) => `https://drive.google.com/thumbnail?id=${id}&sz=w1200`
+import { driveImageUrl } from '../utils/images'
 
 export default function Home() {
   const { images } = useImages()
   const profileImg = images['1']
-  const profileSrc = profileImg ? DRIVE_IMAGE_URL(profileImg.drive_file_id) : null
+  const profileSrc = profileImg ? driveImageUrl(profileImg.drive_file_id) : null
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-120px)]">

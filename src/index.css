@@ -136,6 +136,71 @@ a { color: inherit; text-decoration: none; }
 .project-meta { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
 .project-desc { margin: 0 0 14px; color: var(--muted); }
 
+.project-card-links {
+  position: absolute;
+  top: 18px;
+  right: 26px;
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+}
+
+.project-card-row {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  color: inherit;
+  text-decoration: none;
+}
+.project-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.project-thumb {
+  flex-shrink: 0;
+  width: 220px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+.project-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-row:hover .project-title { color: var(--accent); }
+
+.project-hero {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 24px;
+}
+.project-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Fixed horizontal box — a vertical (phone) video letterboxes via
+   object-fit: contain instead of being cropped or stretched. */
+.project-hero video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: contain;
+}
+.project-hero iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: none;
+}
+
 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* ── Experience items ───────────────────────────────────────── */
@@ -267,13 +332,16 @@ a { color: inherit; text-decoration: none; }
   display: block;
   margin: 1em auto;
 }
-.markdown-content iframe {
+.markdown-content iframe,
+.markdown-content video {
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 8px;
   border: 1px solid var(--border);
+  background: #000;
   margin: 1em 0;
   display: block;
+  object-fit: contain;
 }
 .markdown-content table {
   width: 100%;

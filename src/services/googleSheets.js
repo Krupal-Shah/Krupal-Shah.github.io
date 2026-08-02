@@ -1,16 +1,26 @@
 import { SHEETS_CONFIG } from '../config/sheets'
 
-async function fetchFromSheets(type) {
-  const { DEPLOYED_URL } = SHEETS_CONFIG
-  if (!DEPLOYED_URL) throw new Error('VITE_SHEETS_URL is not configured')
+const cache = new Map()
 
-  const res = await fetch(`${DEPLOYED_URL}?type=${type}`)
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+function fetchFromSheets(type) {
+  if (cache.has(type)) return cache.get(type)
 
-  const json = await res.json()
-  if (!json.success) throw new Error(json.error || 'Sheets request failed')
+  const promise = (async () => {
+    const { DEPLOYED_URL } = SHEETS_CONFIG
+    if (!DEPLOYED_URL) throw new Error('VITE_SHEETS_URL is not configured')
 
-  return json.data
+    const res = await fetch(`${DEPLOYED_URL}?type=${type}`)
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+    const json = await res.json()
+    if (!json.success) throw new Error(json.error || 'Sheets request failed')
+
+    return json.data
+  })()
+
+  promise.catch(() => cache.delete(type))
+  cache.set(type, promise)
+  return promise
 }
 
 export async function fetchProjects() {
@@ -19,4 +29,14 @@ export async function fetchProjects() {
 
 export async function fetchImages() {
   return fetchFromSheets('images')
+}
+
+export async function fetchWork() {
+  return fetchFromSheets('work')
+}
+
+export function preloadSheetsData() {
+  fetchProjects().catch(() => {})
+  fetchWork().catch(() => {})
+  fetchImages().catch(() => {})
 }

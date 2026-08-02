@@ -4,12 +4,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeRaw from 'rehype-raw'
-
-const driveImageUrl = (id) =>
-  `https://drive.google.com/thumbnail?id=${id}&sz=w1200`
-
-const driveVideoUrl = (id) =>
-  `https://drive.google.com/file/d/${id}/preview`
+import { driveImageUrl, resolveVideoSource } from '../utils/images'
 
 // Content pasted into the sheet sometimes carries literal "\n" (backslash + n)
 // instead of real line breaks, which silently breaks markdown block parsing
@@ -26,8 +21,10 @@ function processPlaceholders(content, images) {
     if (!img) return match
 
     if (img.type === 'video') {
-      const src = driveVideoUrl(img.drive_file_id)
-      return `<iframe src="${src}" frameborder="0" allowfullscreen></iframe>`
+      const { kind, src } = resolveVideoSource(img.drive_file_id)
+      return kind === 'direct'
+        ? `<video src="${src}" controls playsinline></video>`
+        : `<iframe src="${src}" frameborder="0" allowfullscreen></iframe>`
     }
 
     const alt = img.alt_text || imageId

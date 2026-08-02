@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useProjects } from '../hooks/useProjects'
+import { useWork } from '../hooks/useWork'
 import { useImages } from '../hooks/useImages'
 import { driveImageUrl } from '../utils/images'
 
@@ -21,7 +21,7 @@ function ExternalIcon() {
   )
 }
 
-function ProjectCard({ project, images }) {
+function WorkCard({ project, images }) {
   const thumb = project.thumbnail_image_id ? images[project.thumbnail_image_id] : null
 
   const preview = project.abstract
@@ -66,7 +66,7 @@ function ProjectCard({ project, images }) {
         </div>
       )}
 
-      <Link to={`/projects/${project.project_id}`} className="project-card-row">
+      <Link to={`/work/${project.project_id}`} className="project-card-row">
         {thumb && (
           <div className="project-thumb">
             <img src={driveImageUrl(thumb.drive_file_id)} alt={thumb.alt_text || project.title} />
@@ -102,7 +102,7 @@ function ProjectCard({ project, images }) {
 function LoadingState() {
   return (
     <div className="flex items-center justify-center py-20">
-      <p style={{ color: 'rgba(255,255,255,0.45)' }}>Loading projects…</p>
+      <p style={{ color: 'rgba(255,255,255,0.45)' }}>Loading work…</p>
     </div>
   )
 }
@@ -110,7 +110,7 @@ function LoadingState() {
 function ErrorState({ error }) {
   return (
     <div className="section card">
-      <p style={{ color: '#fca5a5', margin: 0 }}>Failed to load projects: {error}</p>
+      <p style={{ color: '#fca5a5', margin: 0 }}>Failed to load work: {error}</p>
       <p className="section-text" style={{ marginTop: 8 }}>
         Check that <code>VITE_SHEETS_URL</code> is set in your <code>.env</code> file.
       </p>
@@ -118,8 +118,8 @@ function ErrorState({ error }) {
   )
 }
 
-export default function Projects() {
-  const { projects, loading, error } = useProjects()
+export default function Work() {
+  const { work, loading, error } = useWork()
   const { images } = useImages()
 
   if (loading) return <LoadingState />
@@ -127,17 +127,17 @@ export default function Projects() {
 
   return (
     <div>
-      <section className="card section" aria-label="Projects">
-        <h1 className="h1" style={{ marginBottom: 4 }}>Projects</h1>
-        <p className="section-text">A selection of things I've built.</p>
+      <section className="card section" aria-label="Work">
+        <h1 className="h1" style={{ marginBottom: 4 }}>Work</h1>
+        <p className="section-text">A selection of things I've worked on.</p>
       </section>
 
-      {projects.length === 0 ? (
+      {work.length === 0 ? (
         <section className="card section">
-          <p className="section-text">No projects yet — check back soon.</p>
+          <p className="section-text">No work yet — check back soon.</p>
         </section>
       ) : (
-        projects.map(p => <ProjectCard key={p.project_id} project={p} images={images} />)
+        work.map(p => <WorkCard key={p.project_id} project={p} images={images} />)
       )}
     </div>
   )

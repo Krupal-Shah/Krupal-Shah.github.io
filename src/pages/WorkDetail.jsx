@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useProjects } from '../hooks/useProjects'
+import { useWork } from '../hooks/useWork'
 import { useImages } from '../hooks/useImages'
 import MarkdownRenderer from '../components/MarkdownRenderer'
 import HeroMedia from '../components/HeroMedia'
@@ -15,22 +15,22 @@ function LoadingState() {
 function NotFound() {
   return (
     <section className="card section">
-      <h1 className="h1">Project not found</h1>
-      <Link to="/projects" className="btn" style={{ marginTop: 16, display: 'inline-flex' }}>
-        ← Back to Projects
+      <h1 className="h1">Work item not found</h1>
+      <Link to="/work" className="btn" style={{ marginTop: 16, display: 'inline-flex' }}>
+        ← Back to Work
       </Link>
     </section>
   )
 }
 
-export default function ProjectDetail() {
+export default function WorkDetail() {
   const { id } = useParams()
-  const { projects, loading: pLoading } = useProjects()
+  const { work, loading: wLoading } = useWork()
   const { images, loading: iLoading } = useImages()
 
-  if (pLoading || iLoading) return <LoadingState />
+  if (wLoading || iLoading) return <LoadingState />
 
-  const project = projects.find(p => p.project_id === id)
+  const project = work.find(p => p.project_id === id)
   if (!project) return <NotFound />
 
   const techItems = project.tech_stack
@@ -42,8 +42,8 @@ export default function ProjectDetail() {
   return (
     <article>
       <div style={{ marginBottom: 24 }}>
-        <Link to="/projects" className="btn" style={{ display: 'inline-flex' }}>
-          ← Back to Projects
+        <Link to="/work" className="btn" style={{ display: 'inline-flex' }}>
+          ← Back to Work
         </Link>
       </div>
 

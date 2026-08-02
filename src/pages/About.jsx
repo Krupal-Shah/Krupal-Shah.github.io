@@ -6,17 +6,19 @@ export default function About() {
         <h1 className="h1" style={{ marginBottom: 10 }}>About Me</h1>
         <p className="section-text" style={{ marginBottom: 14 }}>
           I'm a Computer Science student at the University of Alberta with a strong
-          interest in applied machine learning, robotics, and intelligent systems. I
-          am passionate about building thoughtful digital products and solving
-          real-world problems through clean, maintainable code.
+          interest in applied machine learning, computer vision, and intelligent
+          systems. I'm especially drawn to computer vision — turning raw sensor data
+          into something a system can actually reason about — and I like the
+          challenge of taking an idea from a whiteboard to something running reliably
+          on real hardware.
         </p>
         <p className="section-text" style={{ marginBottom: 14 }}>
-          I've built end-to-end solutions involving computer vision, LiDAR, and
-          multi-sensor data, working across the full pipeline—from data processing to
-          model training and deployment in real-world environments. My approach
-          combines technical depth with continuous learning. I value writing clear,
-          scalable solutions, collaborating with teams, and improving development
-          workflows so projects remain easy to grow over time.
+          I've got real-world, hands-on experience building end-to-end systems: from
+          data collection and model training through to deployment on physical
+          devices. I've worked across full pipelines involving computer vision,
+          LiDAR, and multi-sensor data — architecting the infrastructure, training and
+          adapting the models, and getting everything running under real constraints
+          in the field, not just in a notebook.
         </p>
         <p className="section-text">
           Beyond my technical experience, I'm someone who learns quickly, adapts to
@@ -39,6 +41,26 @@ export default function About() {
       {/* Work Experience */}
       <section className="card section" aria-label="Work Experience">
         <h2 className="section-title">Work Experience</h2>
+
+        <article className="experience-item">
+          <p className="content__date">May – Aug 2026</p>
+          <h3 className="content__title">Machine Learning Engineer Intern</h3>
+          <p className="content__subtitle">Retailogists</p>
+          <p className="content__description">
+            Interned on Avia, Retailogists' edge-based retail analytics platform,
+            working on Avia v2, a plug-and-play in-store device that pairs POS data
+            with in-store traffic and demographic insights. I worked end to end on
+            the device's core computer vision pipeline — from architecture to
+            deployment. On the infrastructure side, I helped design and containerize
+            the pipeline with Docker and build out cloud-connected workflows on GCP.
+            On the modeling side, I worked on adapting and fine-tuning vision models
+            for the in-store setting. On deployment, I adapted the software to run
+            within the real limits of the edge hardware, tight compute, memory, and
+            privacy constraints, and validated it through stress testing and ongoing
+            monitoring so it held up under real-world conditions, not just in
+            development.
+          </p>
+        </article>
 
         <article className="experience-item">
           <p className="content__date">Jan – Apr 2026</p>
