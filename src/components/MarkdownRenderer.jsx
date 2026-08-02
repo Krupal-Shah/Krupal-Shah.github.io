@@ -11,6 +11,13 @@ const driveImageUrl = (id) =>
 const driveVideoUrl = (id) =>
   `https://drive.google.com/file/d/${id}/preview`
 
+// Content pasted into the sheet sometimes carries literal "\n" (backslash + n)
+// instead of real line breaks, which silently breaks markdown block parsing
+// (headings, paragraphs, lists). Normalize before anything else runs.
+function normalizeNewlines(content) {
+  return content.replace(/\\n/g, '\n')
+}
+
 // Replace [image_id] tokens — the negative lookahead (?!\() avoids
 // breaking standard markdown links like [text](url).
 function processPlaceholders(content, images) {
@@ -30,7 +37,7 @@ function processPlaceholders(content, images) {
 
 export default function MarkdownRenderer({ content, images = {} }) {
   const processed = useMemo(
-    () => (content ? processPlaceholders(content, images) : ''),
+    () => (content ? processPlaceholders(normalizeNewlines(content), images) : ''),
     [content, images]
   )
 
