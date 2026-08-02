@@ -1,13 +1,23 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
 .vite/
+
+# Test coverage
+coverage/
+
+# Env files
 .env
 .env.local
 .env.development
 .env.production
-*.pyc
-__pycache__/
-*.log
+
+# Editor / OS
+.vscode/
+.idea/
 .DS_Store
-db.sqlite3
-staticfiles/
+
+# Logs
+*.log
