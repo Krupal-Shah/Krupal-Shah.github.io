@@ -34,8 +34,8 @@ describe('Project detail navigation', () => {
       </MemoryRouter>
     )
 
-    const cardLink = await screen.findByRole('link', { name: /test project/i })
-    await user.click(cardLink)
+    const cardTitle = await screen.findByRole('heading', { name: 'Test Project' })
+    await user.click(cardTitle)
 
     expect(await screen.findByRole('heading', { name: 'Test Project' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Heading', level: 1 })).toBeInTheDocument()

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useWork } from '../hooks/useWork'
 import { useImages } from '../hooks/useImages'
 import { driveImageUrl } from '../utils/images'
@@ -22,7 +22,9 @@ function ExternalIcon() {
 }
 
 function WorkCard({ project, images }) {
+  const navigate = useNavigate()
   const thumb = project.thumbnail_image_id ? images[project.thumbnail_image_id] : null
+  const detailPath = `/work/${project.project_id}`
 
   const preview = project.abstract
     ? project.abstract.slice(0, 200) + (project.abstract.length > 200 ? '…' : '')
@@ -34,67 +36,70 @@ function WorkCard({ project, images }) {
 
   return (
     <article
-      className="project-card section"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingLeft: 26, paddingRight: 26, position: 'relative' }}
+      className="project-card section project-card-row"
+      style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingLeft: 26, paddingRight: 26 }}
+      onClick={() => navigate(detailPath)}
     >
-      {(project.github_url || project.live_url) && (
-        <div className="project-card-links">
-          {project.github_url && (
-            <a
-              href={project.github_url}
-              className="btn"
-              style={{ fontSize: 13, gap: 6, padding: '8px 10px' }}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              <GitHubIcon />
-            </a>
-          )}
-          {project.live_url && (
-            <a
-              href={project.live_url}
-              className="btn"
-              style={{ fontSize: 13, gap: 6, padding: '8px 10px' }}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Live Demo"
-            >
-              <ExternalIcon />
-            </a>
-          )}
+      {thumb && (
+        <div className="project-thumb">
+          <img src={driveImageUrl(thumb.drive_file_id)} alt={thumb.alt_text || project.title} />
         </div>
       )}
 
-      <Link to={`/work/${project.project_id}`} className="project-card-row">
-        {thumb && (
-          <div className="project-thumb">
-            <img src={driveImageUrl(thumb.drive_file_id)} alt={thumb.alt_text || project.title} />
-          </div>
-        )}
-
-        <div className="project-card-body">
+      <div className="project-card-body">
+        <div className="project-card-header">
           <h2 className="project-title" style={{ fontSize: 22, marginBottom: 4 }}>
             {project.title}
           </h2>
 
-          {project.subtitle && (
-            <p className="project-meta">{project.subtitle}</p>
-          )}
-
-          {preview && (
-            <p className="project-desc">{preview}</p>
-          )}
-
-          {techItems.length > 0 && (
-            <div className="actions">
-              {techItems.map(t => (
-                <span key={t} className="pill" style={{ fontSize: 12, padding: '4px 10px' }}>{t}</span>
-              ))}
+          {(project.github_url || project.live_url) && (
+            <div className="project-card-links">
+              {project.github_url && (
+                <a
+                  href={project.github_url}
+                  className="btn"
+                  style={{ fontSize: 13, gap: 6, padding: '8px 10px' }}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <GitHubIcon />
+                </a>
+              )}
+              {project.live_url && (
+                <a
+                  href={project.live_url}
+                  className="btn"
+                  style={{ fontSize: 13, gap: 6, padding: '8px 10px' }}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Live Demo"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <ExternalIcon />
+                </a>
+              )}
             </div>
           )}
         </div>
-      </Link>
+
+        {project.subtitle && (
+          <p className="project-meta">{project.subtitle}</p>
+        )}
+
+        {preview && (
+          <p className="project-desc">{preview}</p>
+        )}
+
+        {techItems.length > 0 && (
+          <div className="actions">
+            {techItems.map(t => (
+              <span key={t} className="pill" style={{ fontSize: 12, padding: '4px 10px' }}>{t}</span>
+            ))}
+          </div>
+        )}
+      </div>
     </article>
   )
 }

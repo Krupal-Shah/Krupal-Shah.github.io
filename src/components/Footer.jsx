@@ -24,7 +24,7 @@ export default function Footer() {
       }}
     >
       <div
-        className="flex justify-between items-center gap-4 py-[18px] px-6 mx-auto"
+        className="footer-row flex flex-wrap justify-between items-center gap-4 py-[18px] px-6 mx-auto"
         style={{ maxWidth: '1100px' }}
       >
         <div>
@@ -44,7 +44,7 @@ export default function Footer() {
           © 2026 by Krupal Shah
         </p>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <span className="text-[13px]" style={{ color: 'rgba(255,255,255,0.75)' }}>
             Follow me
           </span>
